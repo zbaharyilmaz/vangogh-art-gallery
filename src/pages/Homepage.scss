@@ -1,0 +1,56 @@
+@import "../scss/mixin";
+@import "../scss/reset";
+@import "../scss/variables";
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+
+body {
+    background-color: $bg-dark-blue;
+    font-family: "Cinzel", serif;
+    text-align: center;
+
+    .header {
+        margin-top: 3rem;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        color: $highlight-yellow;
+        letter-spacing: 3.3px;
+        /* Neon ışığı efektini oluşturmak için çoklu gölgeler */
+        text-shadow: 1px 1px 8px $highlight-yellow, 
+    }
+    h3{
+       color: rgba($highlight-yellow, 0.8);
+        font-size: 1.2rem;
+        font-weight: 200;
+        margin: 1.5rem;
+        letter-spacing:2px;
+        text-shadow: 0 0 1px $highlight-yellow, 
+    }
+
+    .area {
+        @include flex(row, center, 1rem, center);
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    // Tablet ve küçük masaüstü
+    .works {
+        width: calc(50% - 1rem); // 2 kart sırasıyla gösterilir
+        height: 350px; // Yükseklik biraz kısaltılır
+    }
+}
+
+@media (max-width: 768px) {
+
+    // Mobil tablet ve daha küçük ekranlar
+    .works {
+        width: calc(100% - 1rem); // Kartlar tam genişlikte
+        height: 300px; // Yükseklik küçültülür
+    }
+
+    .area {
+        flex-direction: column; // Mobilde kartlar üst üste gelir
+    }
+}

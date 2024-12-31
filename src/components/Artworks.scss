@@ -1,0 +1,47 @@
+@import "../scss/mixin";
+@import "../scss/variables";
+// @import "node_modules/bootstrap/scss/bootstrap.scss";
+
+.works {
+  @include flex(row, center, 1rem, center);
+
+  width: calc(33.33% - 1rem); // Ekran boyutuna göre her bir öğenin genişliği
+  height: 420px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  background-color: $bg-dark-blue;
+  overflow: hidden;
+  padding: 0.7rem;
+  border: 2px solid $bg-lighten-blue;
+
+  img {
+    width: 100%;
+    height: 85%;
+    object-fit: contain;
+    filter: opacity(0.8);
+    transition: transform 0.3s ease;
+    z-index: 2;
+
+    &:hover {
+      transform: scale(1.09);
+      filter: none;
+      cursor: pointer;
+    }
+  }
+  h5 {
+    color: $accent-orange;
+    letter-spacing: 2px;
+  }
+  
+  
+  @media (max-width: 768px) {
+    h5 {
+      font-size: 1rem; // Mobilde yazı boyutunu küçült
+    }
+  }
+
+  // p {
+  //     font-size:0.8rem;
+  //     color:$accent-orange;
+  // }
+}
